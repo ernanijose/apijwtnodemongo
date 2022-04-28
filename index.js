@@ -15,6 +15,10 @@ mongoose.connect(`mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PA
 
 //importando o routes
 const authRoute = require('./routes/auth');
+
+//aplicando middleware do express para json
+app.use(express.json());
+
 //rotas de middleware
 app.use('/api/user', authRoute);
 
